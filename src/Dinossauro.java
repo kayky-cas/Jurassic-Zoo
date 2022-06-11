@@ -6,6 +6,9 @@ public class Dinossauro {
     private final double peso;
     private final double velocidade;
 
+    public static int CARNIVORO = 1;
+    public static int HERBIVORO = 2;
+
     public Dinossauro(int id, String nomeRaca, int tipo, int categoria, int peso, int velocidade) {
         this.id = id;
         this.nomeRaca = nomeRaca;
