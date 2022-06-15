@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da28aeb-4ac8-4c07-8cdf-ccf6bbdccdc0" name="Changes" comment="CadastroDinossauro.java finished">
+      <change afterPath="$PROJECT_DIR$/src/JurassicZoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CadastroDinossauro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CadastroDinossauro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dinossauro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dinossauro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JurassicZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JurassicZoo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +82,6 @@
       <workItem from="1654972556969" duration="635000" />
       <workItem from="1655046366703" duration="4049000" />
       <workItem from="1655137690528" duration="31000" />
-      <workItem from="1655151189019" duration="1879000" />
-      <workItem from="1655236158107" duration="125000" />
-      <workItem from="1655239258613" duration="11000" />
-      <workItem from="1655320776615" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="Dinossauro.java added">
       <created>1654907333149</created>
@@ -125,16 +121,16 @@
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="84">
-        <watch expression="id" language="JAVA" />
-      </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="201">
-        <watch expression="maisVeloz" language="JAVA" />
-      </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="201">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="199">
         <watch expression="maisVelozes" language="JAVA" />
       </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="89">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="199">
+        <watch expression="maisVeloz" language="JAVA" />
+      </inline-watch>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="82">
+        <watch expression="id" language="JAVA" />
+      </inline-watch>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/CadastroDinossauro.java" line="87">
         <watch expression="meio" language="JAVA" />
       </inline-watch>
     </watches-manager>
