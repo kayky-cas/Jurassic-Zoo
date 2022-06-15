@@ -60,12 +60,17 @@ public class Dinossauro {
     }
 
     public String getCategoriaString() {
-        return switch (categoria) {
-            case 1 -> "Pequeno porte";
-            case 2 -> "Médio porte";
-            case 3 -> "Grande porte";
-            default -> "Categoria inválida!";
-        };
+        switch (categoria) {
+            case 1:
+                return "Pequeno porte";
+            case 2:
+                return "Médio porte";
+            case 3:
+                return "Grande porte";
+            default:
+                return "Categoria inválida!";
+        }
+
     }
 
     public boolean ehHerbivoro() {

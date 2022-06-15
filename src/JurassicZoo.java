@@ -108,7 +108,8 @@ public class JurassicZoo {
 
             Dinossauro dinossauro = cadastroDinossauro.relatorioPesoPesado(tipo, categoria);
             if (dinossauro != null) {
-                System.out.printf("Dinossauro mais pesado (%s/%s): \n", dinossauro.getTipoString(), dinossauro.getCategoriaString());
+                System.out.printf("Dinossauro mais pesado (%s/%s): \n", dinossauro.getTipoString(),
+                        dinossauro.getCategoriaString());
                 System.out.println(dinossauro);
             } else {
                 System.out.println("Nenhum dinossauro encontrado!\n");
@@ -186,7 +187,7 @@ public class JurassicZoo {
     private void relatorioMenu() {
         Scanner scanner = new Scanner(System.in);
 
-        String menu = "1- Quantidade de animais de cada tipo e categoria\n" +
+        String menu = "\n1- Quantidade de animais de cada tipo e categoria\n" +
                 "2- Peso pesado\n" +
                 "3- Quantidade de carne para carnívoros\n" +
                 "4- Dá tempo de fugir?\n" +
