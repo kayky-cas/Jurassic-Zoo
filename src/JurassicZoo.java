@@ -241,6 +241,7 @@ public class JurassicZoo {
                     relatorioMenu();
                     break;
                 case 5:
+                    System.out.println("Obrigado por usar o programa!");
                     return;
                 default:
                     System.out.println("Valor inválido!");
