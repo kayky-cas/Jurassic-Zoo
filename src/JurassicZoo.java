@@ -14,6 +14,14 @@ public class JurassicZoo {
         }
     }
 
+    private void descricaoTipo() {
+        System.out.print("1- Carnívoro\n2- Herbívoro\nTipo (1/2): ");
+    }
+
+    private void descricaoCaracteristica() {
+        System.out.println("1 até 10kg: Pequeno porte\n10 até 100kg: Médio porte\nMais de 100kg: Grande porte");
+    }
+
     private void adicionarDinossauro() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -21,7 +29,7 @@ public class JurassicZoo {
             System.out.print("Raça: ");
             String nomeRaca = scanner.nextLine();
 
-            System.out.print("1- Carnívoro\n2- Herbívoro\nTipo (1/2): ");
+            descricaoTipo();
             int tipo = scanner.nextInt();
 
             if (tipo < 1 || tipo > 2) {
@@ -29,23 +37,13 @@ public class JurassicZoo {
                 continue;
             }
 
-            System.out.println("1 até 10kg: Pequeno porte\n10 até 100kg: Médio porte\nMais de 100kg: Grande porte");
+            descricaoCaracteristica();
             System.out.print("Peso (kg): ");
             double peso = scanner.nextDouble();
 
             if (peso < 1) {
                 System.out.println("Peso inválido!");
                 continue;
-            }
-
-            int categoria;
-
-            if (peso <= 10) {
-                categoria = 1;
-            } else if (peso > 10 && peso <= 100) {
-                categoria = 2;
-            } else {
-                categoria = 3;
             }
 
             System.out.print("Velocidade (km/h): ");
@@ -58,7 +56,7 @@ public class JurassicZoo {
 
             int id = cadastroDinossauro.getIdAtual();
 
-            Dinossauro dinossauro = new Dinossauro(id, nomeRaca, tipo, categoria, peso, velocidade);
+            Dinossauro dinossauro = new Dinossauro(id, nomeRaca, tipo, peso, velocidade);
 
             if (cadastroDinossauro.adicionarDinossauro(dinossauro)) {
                 System.out.println("Dinossauro adicionado!");
@@ -90,13 +88,14 @@ public class JurassicZoo {
     private void relatorioPesoPesado() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("Tipo (1 ou 2): ");
+            descricaoTipo();
             int tipo = scanner.nextInt();
             if (tipo < 1 || tipo > 2) {
                 System.out.println("Tipo inválido!");
                 continue;
             }
 
+            descricaoCaracteristica();
             System.out.print("Categoria (1, 2 ou 3): ");
             int categoria = scanner.nextInt();
 
@@ -120,7 +119,7 @@ public class JurassicZoo {
 
     private void relatorioQuantidadeDeCarneParaCarnivoros() {
         double quantidade = cadastroDinossauro.relatorioQuantidadeDeCarneParaCarnivoros();
-        System.out.printf("\nOs carnívoros necessitam de %.2f kg de carne por mes!\n\n", quantidade);
+        System.out.printf("\nOs carnívoros necessitam de %.2f kg de carne por mês!\n\n", quantidade);
     }
 
     private void relatorioDaTempoDeFugir() {
@@ -192,7 +191,7 @@ public class JurassicZoo {
                 "3- Quantidade de carne para carnívoros\n" +
                 "4- Dá tempo de fugir?\n" +
                 "5- Top 10 mais velozes\n" +
-                "6- Sair";
+                "6- Sair do menu de relatórios";
 
         while (true) {
             System.out.println(menu);
@@ -214,6 +213,8 @@ public class JurassicZoo {
                     break;
                 case 6:
                     return;
+                default:
+                    System.out.println("Valor inválido!");
             }
         }
     }
@@ -240,6 +241,8 @@ public class JurassicZoo {
                     break;
                 case 5:
                     return;
+                default:
+                    System.out.println("Valor inválido!");
             }
         }
     }

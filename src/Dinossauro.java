@@ -13,6 +13,15 @@ public class Dinossauro {
     public static final int MEDIO = 2;
     public static final int GRANDE = 3;
 
+    public Dinossauro(int id, String nomeRaca, int tipo, double peso, double velocidade) {
+        this.id = id;
+        this.nomeRaca = nomeRaca;
+        this.tipo = tipo;
+        this.categoria = calcCategoria(peso);
+        this.peso = peso;
+        this.velocidade = velocidade;
+    }
+
     public Dinossauro(int id, String nomeRaca, int tipo, int categoria, double peso, double velocidade) {
         this.id = id;
         this.nomeRaca = nomeRaca;
@@ -57,6 +66,20 @@ public class Dinossauro {
             case 3 -> "Grande porte";
             default -> "Categoria inválida!";
         };
+    }
+
+    public boolean ehHerbivoro() {
+        return tipo == Dinossauro.HERBIVORO;
+    }
+
+    private int calcCategoria(double peso) {
+        if (peso <= 10) {
+            return 1;
+        } else if (peso > 10 && peso <= 100) {
+            return 2;
+        } else {
+            return 3;
+        }
     }
 
     @Override

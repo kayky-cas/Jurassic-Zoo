@@ -36,15 +36,17 @@ public class CadastroDinossauro {
             int id = getIdAtual();
             String nome = nomes[random.nextInt(nomes.length)];
             int tipo = random.nextInt(2) + 1;
+
             int categoria = random.nextInt(3) + 1;
+
             double peso;
 
-            if (categoria == 1) {
-                peso = random.nextDouble() * 9 + 1;
-            } else if (categoria == 2) {
-                peso = random.nextDouble() * 90 + 10;
+            if (categoria == Dinossauro.PEQUENO) {
+                peso = (random.nextDouble() * 26) + 1;
+            } else if (categoria == Dinossauro.MEDIO) {
+                peso = (random.nextDouble() * 74) + 26;
             } else {
-                peso = random.nextDouble() * 4900 + 100;
+                peso = (random.nextDouble() * 899) + 101;
             }
 
             double velocidade = random.nextDouble() * 59 + 1;
@@ -151,7 +153,7 @@ public class CadastroDinossauro {
 
         for (int i = 0; i < posicaoAtual; i++) {
             Dinossauro dinossauro = dinossauros[i];
-            if (dinossauro.getTipo() != Dinossauro.CARNIVORO) {
+            if (dinossauro.ehHerbivoro()) {
                 continue;
             }
             double porcentagem = (double) porcentagemAlimento[dinossauro.getCategoria() - 1] / 100;
