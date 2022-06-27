@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * @author Kayky Belleboni Casagrande
+ * @matricula 22104538-8
+ */
 public class JurassicZoo {
 
     private final CadastroDinossauro cadastroDinossauro = new CadastroDinossauro();

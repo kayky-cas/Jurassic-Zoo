@@ -1,10 +1,13 @@
 import java.util.Random;
 
+/**
+ * @author Kayky Belleboni Casagrande
+ * @matricula 22104538-8
+ */
 public class CadastroDinossauro {
     private final Dinossauro[] dinossauros = new Dinossauro[100];
     private int posicaoAtual = 0;
     private int idAtual = 0;
-
 
     public int getPosicaoAtual() {
         return posicaoAtual;
@@ -30,7 +33,8 @@ public class CadastroDinossauro {
 
     public boolean adicionarDinossaurosAleatorios(int quantidade) {
         Random random = new Random();
-        String[] nomes = {"Tiranossauro Rex", "Velociraptor", "Diplodoco", "Tricerátops", "Pterodáctilo", "Estegossauro"};
+        String[] nomes = { "Tiranossauro Rex", "Velociraptor", "Diplodoco", "Tricerátops", "Pterodáctilo",
+                "Estegossauro" };
 
         for (int i = 0; i < quantidade; i++) {
             int id = getIdAtual();
@@ -111,11 +115,11 @@ public class CadastroDinossauro {
     }
 
     public String relatorioQuantidadeDeAnimaisDeCadaTipoCategoria() {
-        int[][] quantidadeTipoCat = {{0, 0, 0}, {0, 0, 0}};
+        int[][] quantidadeTipoCat = { { 0, 0, 0 }, { 0, 0, 0 } };
 
         for (int i = 0; i < posicaoAtual; i++) {
-            Dinossauro dinossauro = dinossauros[i];
-            quantidadeTipoCat[dinossauro.getTipo() - 1][dinossauro.getCategoria() - 1]++;
+            Dinossauro d = dinossauros[i];
+            quantidadeTipoCat[d.getTipo() - 1][d.getCategoria() - 1]++;
         }
         String relatorio = "";
 
@@ -124,7 +128,6 @@ public class CadastroDinossauro {
             relatorio += String.format("PP: %2d, ", quantidadeTipoCat[i][Dinossauro.PEQUENO - 1]);
             relatorio += String.format("MP: %2d, ", quantidadeTipoCat[i][Dinossauro.MEDIO - 1]);
             relatorio += String.format("GP: %2d.\n", quantidadeTipoCat[i][Dinossauro.GRANDE - 1]);
-
         }
 
         return relatorio;
@@ -149,7 +152,7 @@ public class CadastroDinossauro {
 
     public double relatorioQuantidadeDeCarneParaCarnivoros() {
         double quantidadeDeCarne = 0;
-        int[] porcentagemAlimento = {10, 15, 20};
+        int[] porcentagemAlimento = { 10, 15, 20 };
 
         for (int i = 0; i < posicaoAtual; i++) {
             Dinossauro dinossauro = dinossauros[i];
@@ -157,7 +160,7 @@ public class CadastroDinossauro {
                 continue;
             }
             double porcentagem = (double) porcentagemAlimento[dinossauro.getCategoria() - 1] / 100;
-            quantidadeDeCarne += (dinossauro.getPeso() * porcentagem) * 30;
+            quantidadeDeCarne += dinossauro.getPeso() * porcentagem * 30;
         }
 
         return quantidadeDeCarne;
@@ -172,7 +175,6 @@ public class CadastroDinossauro {
         return tempoP < tempoD;
     }
 
-    //TODO arrumar
     public Dinossauro[] relatorioTop10MaisVelozes() {
         int quantidade = Math.min(posicaoAtual, 10);
         Dinossauro[] maisVelozes = new Dinossauro[quantidade];
@@ -183,7 +185,6 @@ public class CadastroDinossauro {
                 Dinossauro dinossauro = dinossauros[j];
                 boolean existe = false;
 
-                //TODO: Implementar pesquisa binária por velocidade
                 for (int k = 0; k < i; k++) {
                     if (dinossauro.getId() == maisVelozes[k].getId()) {
                         existe = true;

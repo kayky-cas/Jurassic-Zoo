@@ -1,3 +1,7 @@
+/**
+ * @author Kayky Belleboni Casagrande
+ * @matricula 22104538-8
+ */
 public class Dinossauro {
     private final int id;
     private final String nomeRaca;
@@ -56,16 +60,16 @@ public class Dinossauro {
     }
 
     public String getTipoString() {
-        return tipo == 1 ? "Carnívoro" : "Herbívoro";
+        return tipo == CARNIVORO ? "Carnívoro" : "Herbívoro";
     }
 
     public String getCategoriaString() {
         switch (categoria) {
-            case 1:
+            case PEQUENO:
                 return "Pequeno porte";
-            case 2:
+            case MEDIO:
                 return "Médio porte";
-            case 3:
+            case GRANDE:
                 return "Grande porte";
             default:
                 return "Categoria inválida!";
